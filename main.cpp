@@ -14,6 +14,20 @@ using namespace std;
 
 
 
+
+static int window, returnmenu, returnsubmenu, returnsubmenucolor1, returnsubmenucolor2,value = 0;
+
+void *font = GLUT_BITMAP_TIMES_ROMAN_24;
+
+int window_ID;
+
+
+
+
+
+
+
+
 float red = 0.0, green = 0.0, blue = 0.0;
 int tmpx, tmpy; // store the first point when shape is line, rectangle or circle
 int brushSize = 4;
@@ -22,8 +36,8 @@ bool isSecond = false;
 bool isRandom = false;
 bool isEraser = false;
 bool isRadial = false;
-float window_w = 500;
-float window_h = 500;
+float window_w = 1500;
+float window_h = 900;
 
 int shape = 1; // 1:point, 2:line, 3:rectangle, 4:circle, 5:brush
 
@@ -471,6 +485,11 @@ void processColourMenu(int value)
 
 	switch (value)
 	{
+	case 0: // black
+		red = 0.0;
+		green = 0.0;
+		blue = 0.0;
+		break;
 	case 1: // red
 		red = 1.0;
 		green = 0.0;
@@ -496,9 +515,20 @@ void processColourMenu(int value)
 		green = 1.0;
 		blue = 0.0;
 		break;
-	case 6: // random
+    case 6: // pink
+		red = 1.0;
+		green = 0.75;
+		blue = 0.8;
+		break;
+    case 7: // grey
+		red = 0.5;
+		green = 0.5;
+		blue = 0.5;
+		break;
+	case 8: // random
 		isRandom = true;
 		break;
+
 	}
 }
 
@@ -537,12 +567,15 @@ void processRadicalBrushMenu(int value)
 void createOurMenu()
 {
 	int colourMenu = glutCreateMenu(processColourMenu);
+	glutAddMenuEntry("Black",0);
 	glutAddMenuEntry("Red", 1);
 	glutAddMenuEntry("Green", 2);
 	glutAddMenuEntry("Blue", 3);
 	glutAddMenuEntry("Purple", 4);
 	glutAddMenuEntry("Yellow", 5);
-	glutAddMenuEntry("Random", 6);
+	glutAddMenuEntry("Pink", 6);
+	glutAddMenuEntry("Grey", 7);
+	glutAddMenuEntry("Random", 8);
 
 	int sizeMenu = glutCreateMenu(processBrushSizeMenu);
 	glutAddMenuEntry("4px", 4);
@@ -569,7 +602,7 @@ void createOurMenu()
 	int main_id = glutCreateMenu(processMainMenu);
 	glutAddSubMenu("Colour", colourMenu);
 	glutAddSubMenu("Shapes", shapeMenu);
-	glutAddSubMenu("Radical Paint Brush", radicalBrushMenu);
+	//glutAddSubMenu("Radical Paint Brush", radicalBrushMenu);
 	glutAddSubMenu("Eraser", eraserSizeMenu);
 	glutAddMenuEntry("Undo", 2);
 	glutAddMenuEntry("Redo", 3);
@@ -630,8 +663,6 @@ void printGuide()
 			  << "-> draw a circle centered at the position of the first click, with its radius set by a second click.\n"
 			  << "\tAirbrush\t"
 			  << "-> draw multiple points as brush around the clicked point. There are four options of size.\n"
-			  << "Menu \"Radical..\""
-			  << "-> draw multiple points as brush around the centre point of the document. You can choose True or False. Only useful when shape is point. The default option is false. After choosing point in shape, it becomes False.\n"
 			  << "Menu \"Eraser\"\t"
 			  << "-> erase the points by clicking and dragging.\n"
 			  << "Menu \"Undo\"\t"
@@ -659,17 +690,238 @@ void printGuide()
 			  << "################################# Paint #################################" << std::endl;
 }
 
-int main(int argc, char **argv)
+
+
+void *fonts[] =
 {
-	glutInit(&argc, argv);
-	glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE);
-	glutInitWindowSize(window_w, window_h);
+  GLUT_BITMAP_9_BY_15,
+  GLUT_BITMAP_TIMES_ROMAN_10,
+  GLUT_BITMAP_TIMES_ROMAN_24
+};
+void menu(int n){
+if (n == 0)
+{
+	glutDestroyWindow(window);
+	exit(0);
+}
+
+else
+{
+	value = n;
+}
+glutPostRedisplay();
+}
+void createMenu(void)
+{
+    returnsubmenucolor1 = glutCreateMenu(menu);
+    glutAddMenuEntry("Black", 12);
+    glutAddMenuEntry("Red", 11);
+    glutAddMenuEntry("Blue", 13);
+    glutAddMenuEntry("Green", 14);
+
+
+    returnsubmenucolor2 = glutCreateMenu(menu);
+    glutAddMenuEntry("Black", 22);
+    glutAddMenuEntry("Red", 21);
+    glutAddMenuEntry("Blue", 23);
+    glutAddMenuEntry("Green", 24);
+
+    returnmenu = glutCreateMenu(menu); //function to call menu function and return value
+    glutAddSubMenu("Start Page", returnsubmenucolor1);
+    glutAddSubMenu("Instructions",returnsubmenucolor2);
+    glutAddMenuEntry("Start the Drawing Tool",30);
+    glutAddMenuEntry("Quit", 0);
+    glutAttachMenu(GLUT_RIGHT_BUTTON);
+}
+
+void output(int x, int y, char *string)
+{
+  int len, i;
+
+  glRasterPos2f(x, y);
+  len = (int) strlen(string);
+  for (i = 0; i < len; i++) {
+    glutBitmapCharacter(font, string[i]);
+  }
+}
+
+
+void displayf(void){
+
+    glClear(GL_COLOR_BUFFER_BIT);
+    output(500, 50, " COMPUTER GRAPHICS PROJECT ");
+    output(600, 100, "DRAWING TOOL");
+    output(565, 350, "RIGHT Click to Navigate");
+    output(850, 600, "Submitted by: Vasista D  (1PE17CS168)");
+    output(900, 625, "            : Suyash Kumar Dubli  (1PE17CS158)");
+    output(900, 650, "            : Sushil Kumar AS  (1PE17CS157)");
+    glutSwapBuffers();
+
+
+    glClear(GL_COLOR_BUFFER_BIT);
+    if (value == 11){
+        glPushMatrix();
+        glColor3d(1.0, 0.0, 0.0);
+        //glutDisplayFunc(display2);
+        //glutPostRedisplay();
+        glClear(GL_COLOR_BUFFER_BIT);
+        output(500, 50, " COMPUTER GRAPHICS PROJECT ");
+        output(600, 100, "DRAWING TOOL");
+        output(565, 350, "RIGHT Click to Navigate");
+        output(850, 600, "Submitted by: Vasista D  (1PE17CS168)");
+        output(900, 625, "            : Suyash Kumar Dubli  (1PE17CS158)");
+        output(900, 650, "            : Sushil Kumar AS  (1PE17CS157)");
+        glutSwapBuffers();
+        glPopMatrix();
+    }
+
+    else if (value == 12){
+        glPushMatrix();
+        glColor3d(0.0, 0.0, 0.0);
+        //glutDisplayFunc(display2);
+        glClear(GL_COLOR_BUFFER_BIT);
+        output(500, 50, " COMPUTER GRAPHICS PROJECT ");
+        output(600, 100, "DRAWING TOOL");
+        output(565, 350, "RIGHT Click to Navigate");
+        output(850, 600, "Submitted by: Vasista D  (1PE17CS168)");
+        output(900, 625, "            : Suyash Kumar Dubli  (1PE17CS158)");
+        output(900, 650, "            : Sushil Kumar AS  (1PE17CS157)");
+        glutSwapBuffers();
+        glPopMatrix();
+    }
+
+    else if (value == 13){
+        glPushMatrix();
+        glColor3d(0.0, 0.0, 1.0);
+        //glutDisplayFunc(display2);
+        glClear(GL_COLOR_BUFFER_BIT);
+        output(500, 50, " COMPUTER GRAPHICS PROJECT ");
+        output(600, 100, "DRAWING TOOL");
+        output(565, 350, "RIGHT Click to Navigate");
+        output(850, 600, "Submitted by: Vasista D  (1PE17CS168)");
+        output(900, 625, "            : Suyash Kumar Dubli  (1PE17CS158)");
+        output(900, 650, "            : Sushil Kumar AS  (1PE17CS157)");
+        glutSwapBuffers();
+        glPopMatrix();
+    }
+
+    else if (value == 14){
+        glPushMatrix();
+        glColor3d(0.0, 1.0, 0.0);
+        //glutDisplayFunc(display2);
+        glClear(GL_COLOR_BUFFER_BIT);
+        output(500, 50, " COMPUTER GRAPHICS PROJECT ");
+        output(600, 100, "DRAWING TOOL");
+        output(565, 350, "RIGHT Click to Navigate");
+        output(850, 600, "Submitted by: Vasista D  (1PE17CS168)");
+        output(900, 625, "            : Suyash Kumar Dubli  (1PE17CS158)");
+        output(900, 650, "            : Sushil Kumar AS  (1PE17CS157)");
+        glutSwapBuffers();
+        glPopMatrix();
+    }
+
+    else if (value == 21)
+    {
+        glPushMatrix();
+        glColor3d(1.0,0.0,0.0);
+        glClear(GL_COLOR_BUFFER_BIT);
+        output(500, 50, " INSTRUCTIONS: DRAWING TOOL");
+        output(100, 100, "1:");
+        output(100, 150, "2:");
+        output(100, 200, "3:");
+        output(100, 250, "4:");
+        output(100, 300, "5:");
+        glutSwapBuffers();
+        glPopMatrix();
+    }
+
+    else if (value == 22)
+    {
+        glPushMatrix();
+        glColor3d(0.0,0.0,0.0);
+        glClear(GL_COLOR_BUFFER_BIT);
+        output(500, 50, " INSTRUCTIONS: DRAWING TOOL");
+        output(100, 100, "1:");
+        output(100, 150, "2:");
+        output(100, 200, "3:");
+        output(100, 250, "4:");
+        output(100, 300, "5:");
+        glutSwapBuffers();
+        glPopMatrix();
+    }
+
+    else if (value == 24)
+    {
+        glPushMatrix();
+        glColor3d(0.0,1.0,0.0);
+        glClear(GL_COLOR_BUFFER_BIT);
+        output(500, 50, " INSTRUCTIONS: DRAWING TOOL");
+        output(100, 100, "1:");
+        output(100, 150, "2:");
+        output(100, 200, "3:");
+        output(100, 250, "4:");
+        output(100, 300, "5:");
+        glutSwapBuffers();
+        glPopMatrix();
+    }
+
+    else if (value == 23)
+    {
+        glPushMatrix();
+        glColor3d(0.0,0.0,1.0);
+        glClear(GL_COLOR_BUFFER_BIT);
+        output(500, 50, " INSTRUCTIONS: DRAWING TOOL");
+        output(100, 100, "1:");
+        output(100, 150, "2:");
+        output(100, 200, "3:");
+        output(100, 250, "4:");
+        output(100, 300, "5:");
+        glutSwapBuffers();
+        glPopMatrix();
+    }
+
+    else if(value == 30)
+    {
+    glutDestroyWindow(window_ID);
 	glutInitWindowPosition(100, 100);
 	glutCreateWindow("Paint");
 	callbackInit();
 	init();
-	//printGuide();
+	printGuide();
 	createOurMenu();
 	glutMainLoop();
+    }
+glFlush();
+}
+
+
+
+
+
+int main(int argc, char **argv)
+{
+
+
+
+    int i,color_submenu;
+
+    glutInit(&argc, argv);
+    for (i = 1; i < argc; i++) {
+        if (!strcmp(argv[i], "-mono")) {
+            font = GLUT_BITMAP_9_BY_15;
+        }
+    }
+    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
+    glutInitWindowSize(1500, 900);
+    window_ID = glutCreateWindow("Drawing Tool");
+    glClearColor(1.0, 1.0, 1.0, 1.0);
+    glColor3f(0.0,0.0,0.0);
+    glutDisplayFunc(displayf);
+    glutReshapeFunc(reshape);
+    createMenu();
+    glutMainLoop();
+
+
 	return (0);
+
 }

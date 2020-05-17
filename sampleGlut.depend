@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1588191902 source:c:\users\s510\documents\codeblocks\sampleglut\main.cpp
+1589698496 source:c:\users\s510\documents\codeblocks\sampleglut\main.cpp
 	<time.h>
 	"../dhead/dhead1.h"
 	<iostream>
@@ -252,4 +252,6 @@
 	<string>
 
 1588190644 c:\users\s510\documents\codeblocks\dhead\dhead1.h
+
+1588190644 c:\users\s510\documents\codeblocks\sampleglut\dhead1.h
 
