@@ -1,6 +1,6 @@
 #include <time.h>
 //#include"dllhead1.h"
-#include"../dhead/dhead1.h"
+#include"dhead1.h"
 #include <iostream>
 #include <cmath>
 #include <string>
@@ -749,12 +749,12 @@ void output(int x, int y, char *string)
 void displayf(void){
 
     glClear(GL_COLOR_BUFFER_BIT);
-    output(500, 50, " COMPUTER GRAPHICS PROJECT ");
-    output(600, 100, "DRAWING TOOL");
-    output(565, 350, "RIGHT Click to Navigate");
-    output(850, 600, "Submitted by: Vasista D  (1PE17CS168)");
-    output(900, 625, "            : Suyash Kumar Dubli  (1PE17CS158)");
-    output(900, 650, "            : Sushil Kumar AS  (1PE17CS157)");
+    output(500, 675, " COMPUTER GRAPHICS PROJECT ");
+    output(600, 625, "DRAWING TOOL");
+    output(565, 400, "RIGHT Click to Navigate");
+    output(850, 150, "Submitted by: Vasista D  (1PE17CS168)");
+    output(900, 100, "            : Suyash Kumar Dubli  (1PE17CS158)");
+    output(900, 50, "            : Sushil Kumar AS  (1PE17CS157)");
     glutSwapBuffers();
 
 
@@ -765,12 +765,12 @@ void displayf(void){
         //glutDisplayFunc(display2);
         //glutPostRedisplay();
         glClear(GL_COLOR_BUFFER_BIT);
-        output(500, 50, " COMPUTER GRAPHICS PROJECT ");
-        output(600, 100, "DRAWING TOOL");
-        output(565, 350, "RIGHT Click to Navigate");
-        output(850, 600, "Submitted by: Vasista D  (1PE17CS168)");
-        output(900, 625, "            : Suyash Kumar Dubli  (1PE17CS158)");
-        output(900, 650, "            : Sushil Kumar AS  (1PE17CS157)");
+        output(500, 675, " COMPUTER GRAPHICS PROJECT ");
+        output(600, 625, "DRAWING TOOL");
+        output(565, 400, "RIGHT Click to Navigate");
+        output(850, 150, "Submitted by: Vasista D  (1PE17CS168)");
+        output(900, 100, "            : Suyash Kumar Dubli  (1PE17CS158)");
+        output(900, 50, "            : Sushil Kumar AS  (1PE17CS157)");
         glutSwapBuffers();
         glPopMatrix();
     }
@@ -780,12 +780,12 @@ void displayf(void){
         glColor3d(0.0, 0.0, 0.0);
         //glutDisplayFunc(display2);
         glClear(GL_COLOR_BUFFER_BIT);
-        output(500, 50, " COMPUTER GRAPHICS PROJECT ");
-        output(600, 100, "DRAWING TOOL");
-        output(565, 350, "RIGHT Click to Navigate");
-        output(850, 600, "Submitted by: Vasista D  (1PE17CS168)");
-        output(900, 625, "            : Suyash Kumar Dubli  (1PE17CS158)");
-        output(900, 650, "            : Sushil Kumar AS  (1PE17CS157)");
+        output(500, 675, " COMPUTER GRAPHICS PROJECT ");
+        output(600, 625, "DRAWING TOOL");
+        output(565, 400, "RIGHT Click to Navigate");
+        output(850, 150, "Submitted by: Vasista D  (1PE17CS168)");
+        output(900, 100, "            : Suyash Kumar Dubli  (1PE17CS158)");
+        output(900, 50, "            : Sushil Kumar AS  (1PE17CS157)");
         glutSwapBuffers();
         glPopMatrix();
     }
@@ -795,12 +795,12 @@ void displayf(void){
         glColor3d(0.0, 0.0, 1.0);
         //glutDisplayFunc(display2);
         glClear(GL_COLOR_BUFFER_BIT);
-        output(500, 50, " COMPUTER GRAPHICS PROJECT ");
-        output(600, 100, "DRAWING TOOL");
-        output(565, 350, "RIGHT Click to Navigate");
-        output(850, 600, "Submitted by: Vasista D  (1PE17CS168)");
-        output(900, 625, "            : Suyash Kumar Dubli  (1PE17CS158)");
-        output(900, 650, "            : Sushil Kumar AS  (1PE17CS157)");
+        output(500, 675, " COMPUTER GRAPHICS PROJECT ");
+        output(600, 625, "DRAWING TOOL");
+        output(565, 400, "RIGHT Click to Navigate");
+        output(850, 150, "Submitted by: Vasista D  (1PE17CS168)");
+        output(900, 100, "            : Suyash Kumar Dubli  (1PE17CS158)");
+        output(900, 50, "            : Sushil Kumar AS  (1PE17CS157)");
         glutSwapBuffers();
         glPopMatrix();
     }
@@ -810,12 +810,12 @@ void displayf(void){
         glColor3d(0.0, 1.0, 0.0);
         //glutDisplayFunc(display2);
         glClear(GL_COLOR_BUFFER_BIT);
-        output(500, 50, " COMPUTER GRAPHICS PROJECT ");
-        output(600, 100, "DRAWING TOOL");
-        output(565, 350, "RIGHT Click to Navigate");
-        output(850, 600, "Submitted by: Vasista D  (1PE17CS168)");
-        output(900, 625, "            : Suyash Kumar Dubli  (1PE17CS158)");
-        output(900, 650, "            : Sushil Kumar AS  (1PE17CS157)");
+        output(500, 675, " COMPUTER GRAPHICS PROJECT ");
+        output(600, 625, "DRAWING TOOL");
+        output(565, 400, "RIGHT Click to Navigate");
+        output(850, 150, "Submitted by: Vasista D  (1PE17CS168)");
+        output(900, 100, "            : Suyash Kumar Dubli  (1PE17CS158)");
+        output(900, 50, "            : Sushil Kumar AS  (1PE17CS157)");
         glutSwapBuffers();
         glPopMatrix();
     }
@@ -825,12 +825,32 @@ void displayf(void){
         glPushMatrix();
         glColor3d(1.0,0.0,0.0);
         glClear(GL_COLOR_BUFFER_BIT);
-        output(500, 50, " INSTRUCTIONS: DRAWING TOOL");
-        output(100, 100, "1:");
-        output(100, 150, "2:");
-        output(100, 200, "3:");
-        output(100, 250, "4:");
-        output(100, 300, "5:");
+        output(475, 680, "A GUIDE TO PAINT TOOL!!");
+        output(100, 650, "List of Commands:");
+        output(100, 615, "1: Right click -> show menu ");
+        output(100, 590, "2: Left click  -> choose option ");
+        output(100, 565, "3: Menu \"Color\"  -> You can choose Red, Green, Blue, Yellow or Random, the default color is Red.");
+        output(100, 540, "4: Menu \"Shapes\"  -> The default shape is Point.");
+        output(100, 515, "5: Point  -> draw a dot at the point clicked with the mouse. Clicking and dragging will draw points constantly like free-form ");
+        output(115, 490, " drawing.");
+        output(100, 465, "6: Line  -> Draw a linebetween two subseauently clicked points.(Bresenham's algorithm is used here.");
+        output(100, 440, "7: Rectangle  -> draw a rectangle with top-left corner specified by the first click and the bottom-right corner specified ");
+        output(115, 415, " by a second click. If the second click is bottom-left, top-right or top-left comparing to the first click, a warning will show ");
+        output(115, 390, " in the console.");
+        output(100, 365, "8: Circle  -> draw a circle centered at the position of the first click, with its radius set by a second click.");
+        output(100, 340, "9: Airbrush  -> draw multiple points as brush around the clicked point.");
+        output(90, 315, "10: Menu \"Eraser\"  -> erase the points by clicking and dragging.");
+        output(90, 290, "11: Menu \"Undo\"  -> undo, the history can keep maximum 20 records.");
+        output(90, 265, "12: Menu \"Redo\"  ->  redo, the history can keep maximum 20 records. ");
+        output(90, 240, "13: Menu \"Clear\"  -> clear all the points and clear the history.  ");
+        output(90, 215, "14: Menu \"Quit\"  -> close the window.");
+        output(90, 190, "15: Keyboard 'q'  -> close the window.");
+        output(90, 165, "16: Keyboard 'esc'  -> close the window. ");
+        output(90, 140, "17: Keyboard 'c'    -> clear all the points and clear the history. ");
+        output(90, 115, "18: Keyboard '+'    -> larger size of eraser or brush.");
+        output(90, 90, "19: Keyboard '-'    -> smaller size of eraser or brush.");
+        output(90, 65, "20: Keyboard 'u'    -> undo, the history can keep maximum 20 records.");
+        output(90, 40, "21: Keyboard 'r'    -> redo, the history can keep maximum 20 records.");
         glutSwapBuffers();
         glPopMatrix();
     }
@@ -840,12 +860,32 @@ void displayf(void){
         glPushMatrix();
         glColor3d(0.0,0.0,0.0);
         glClear(GL_COLOR_BUFFER_BIT);
-        output(500, 50, " INSTRUCTIONS: DRAWING TOOL");
-        output(100, 100, "1:");
-        output(100, 150, "2:");
-        output(100, 200, "3:");
-        output(100, 250, "4:");
-        output(100, 300, "5:");
+        output(475, 680, "A GUIDE TO PAINT TOOL!!");
+        output(100, 650, "List of Commands:");
+        output(100, 615, "1: Right click -> show menu ");
+        output(100, 590, "2: Left click  -> choose option ");
+        output(100, 565, "3: Menu \"Color\"  -> You can choose Red, Green, Blue, Yellow or Random, the default color is Red.");
+        output(100, 540, "4: Menu \"Shapes\"  -> The default shape is Point.");
+        output(100, 515, "5: Point  -> draw a dot at the point clicked with the mouse. Clicking and dragging will draw points constantly like free-form ");
+        output(115, 490, " drawing.");
+        output(100, 465, "6: Line  -> Draw a linebetween two subseauently clicked points.(Bresenham's algorithm is used here.");
+        output(100, 440, "7: Rectangle  -> draw a rectangle with top-left corner specified by the first click and the bottom-right corner specified ");
+        output(115, 415, " by a second click. If the second click is bottom-left, top-right or top-left comparing to the first click, a warning will show ");
+        output(115, 390, " in the console.");
+        output(100, 365, "8: Circle  -> draw a circle centered at the position of the first click, with its radius set by a second click.");
+        output(100, 340, "9: Airbrush  -> draw multiple points as brush around the clicked point.");
+        output(90, 315, "10: Menu \"Eraser\"  -> erase the points by clicking and dragging.");
+        output(90, 290, "11: Menu \"Undo\"  -> undo, the history can keep maximum 20 records.");
+        output(90, 265, "12: Menu \"Redo\"  ->  redo, the history can keep maximum 20 records. ");
+        output(90, 240, "13: Menu \"Clear\"  -> clear all the points and clear the history.  ");
+        output(90, 215, "14: Menu \"Quit\"  -> close the window.");
+        output(90, 190, "15: Keyboard 'q'  -> close the window.");
+        output(90, 165, "16: Keyboard 'esc'  -> close the window. ");
+        output(90, 140, "17: Keyboard 'c'    -> clear all the points and clear the history. ");
+        output(90, 115, "18: Keyboard '+'    -> larger size of eraser or brush.");
+        output(90, 90, "19: Keyboard '-'    -> smaller size of eraser or brush.");
+        output(90, 65, "20: Keyboard 'u'    -> undo, the history can keep maximum 20 records.");
+        output(90, 40, "21: Keyboard 'r'    -> redo, the history can keep maximum 20 records.");
         glutSwapBuffers();
         glPopMatrix();
     }
@@ -855,12 +895,32 @@ void displayf(void){
         glPushMatrix();
         glColor3d(0.0,1.0,0.0);
         glClear(GL_COLOR_BUFFER_BIT);
-        output(500, 50, " INSTRUCTIONS: DRAWING TOOL");
-        output(100, 100, "1:");
-        output(100, 150, "2:");
-        output(100, 200, "3:");
-        output(100, 250, "4:");
-        output(100, 300, "5:");
+        output(475, 680, "A GUIDE TO PAINT TOOL!!");
+        output(100, 650, "List of Commands:");
+        output(100, 615, "1: Right click -> show menu ");
+        output(100, 590, "2: Left click  -> choose option ");
+        output(100, 565, "3: Menu \"Color\"  -> You can choose Red, Green, Blue, Yellow or Random, the default color is Red.");
+        output(100, 540, "4: Menu \"Shapes\"  -> The default shape is Point.");
+        output(100, 515, "5: Point  -> draw a dot at the point clicked with the mouse. Clicking and dragging will draw points constantly like free-form ");
+        output(115, 490, " drawing.");
+        output(100, 465, "6: Line  -> Draw a linebetween two subseauently clicked points.(Bresenham's algorithm is used here.");
+        output(100, 440, "7: Rectangle  -> draw a rectangle with top-left corner specified by the first click and the bottom-right corner specified ");
+        output(115, 415, " by a second click. If the second click is bottom-left, top-right or top-left comparing to the first click, a warning will show ");
+        output(115, 390, " in the console.");
+        output(100, 365, "8: Circle  -> draw a circle centered at the position of the first click, with its radius set by a second click.");
+        output(100, 340, "9: Airbrush  -> draw multiple points as brush around the clicked point.");
+        output(90, 315, "10: Menu \"Eraser\"  -> erase the points by clicking and dragging.");
+        output(90, 290, "11: Menu \"Undo\"  -> undo, the history can keep maximum 20 records.");
+        output(90, 265, "12: Menu \"Redo\"  ->  redo, the history can keep maximum 20 records. ");
+        output(90, 240, "13: Menu \"Clear\"  -> clear all the points and clear the history.  ");
+        output(90, 215, "14: Menu \"Quit\"  -> close the window.");
+        output(90, 190, "15: Keyboard 'q'  -> close the window.");
+        output(90, 165, "16: Keyboard 'esc'  -> close the window. ");
+        output(90, 140, "17: Keyboard 'c'    -> clear all the points and clear the history. ");
+        output(90, 115, "18: Keyboard '+'    -> larger size of eraser or brush.");
+        output(90, 90, "19: Keyboard '-'    -> smaller size of eraser or brush.");
+        output(90, 65, "20: Keyboard 'u'    -> undo, the history can keep maximum 20 records.");
+        output(90, 40, "21: Keyboard 'r'    -> redo, the history can keep maximum 20 records.");
         glutSwapBuffers();
         glPopMatrix();
     }
@@ -870,12 +930,32 @@ void displayf(void){
         glPushMatrix();
         glColor3d(0.0,0.0,1.0);
         glClear(GL_COLOR_BUFFER_BIT);
-        output(500, 50, " INSTRUCTIONS: DRAWING TOOL");
-        output(100, 100, "1:");
-        output(100, 150, "2:");
-        output(100, 200, "3:");
-        output(100, 250, "4:");
-        output(100, 300, "5:");
+        output(475, 680, "A GUIDE TO PAINT TOOL!!");
+        output(100, 650, "List of Commands:");
+        output(100, 615, "1: Right click -> show menu ");
+        output(100, 590, "2: Left click  -> choose option ");
+        output(100, 565, "3: Menu \"Color\"  -> You can choose Red, Green, Blue, Yellow or Random, the default color is Red.");
+        output(100, 540, "4: Menu \"Shapes\"  -> The default shape is Point.");
+        output(100, 515, "5: Point  -> draw a dot at the point clicked with the mouse. Clicking and dragging will draw points constantly like free-form ");
+        output(115, 490, " drawing.");
+        output(100, 465, "6: Line  -> Draw a linebetween two subseauently clicked points.(Bresenham's algorithm is used here.");
+        output(100, 440, "7: Rectangle  -> draw a rectangle with top-left corner specified by the first click and the bottom-right corner specified ");
+        output(115, 415, " by a second click. If the second click is bottom-left, top-right or top-left comparing to the first click, a warning will show ");
+        output(115, 390, " in the console.");
+        output(100, 365, "8: Circle  -> draw a circle centered at the position of the first click, with its radius set by a second click.");
+        output(100, 340, "9: Airbrush  -> draw multiple points as brush around the clicked point.");
+        output(90, 315, "10: Menu \"Eraser\"  -> erase the points by clicking and dragging.");
+        output(90, 290, "11: Menu \"Undo\"  -> undo, the history can keep maximum 20 records.");
+        output(90, 265, "12: Menu \"Redo\"  ->  redo, the history can keep maximum 20 records. ");
+        output(90, 240, "13: Menu \"Clear\"  -> clear all the points and clear the history.  ");
+        output(90, 215, "14: Menu \"Quit\"  -> close the window.");
+        output(90, 190, "15: Keyboard 'q'  -> close the window.");
+        output(90, 165, "16: Keyboard 'esc'  -> close the window. ");
+        output(90, 140, "17: Keyboard 'c'    -> clear all the points and clear the history. ");
+        output(90, 115, "18: Keyboard '+'    -> larger size of eraser or brush.");
+        output(90, 90, "19: Keyboard '-'    -> smaller size of eraser or brush.");
+        output(90, 65, "20: Keyboard 'u'    -> undo, the history can keep maximum 20 records.");
+        output(90, 40, "21: Keyboard 'r'    -> redo, the history can keep maximum 20 records.");
         glutSwapBuffers();
         glPopMatrix();
     }
@@ -894,14 +974,8 @@ void displayf(void){
 glFlush();
 }
 
-
-
-
-
 int main(int argc, char **argv)
 {
-
-
 
     int i,color_submenu;
 
@@ -914,6 +988,7 @@ int main(int argc, char **argv)
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
     glutInitWindowSize(1500, 900);
     window_ID = glutCreateWindow("Drawing Tool");
+    //glutFullScreen();
     glClearColor(1.0, 1.0, 1.0, 1.0);
     glColor3f(0.0,0.0,0.0);
     glutDisplayFunc(displayf);
