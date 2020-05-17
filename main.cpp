@@ -1,5 +1,5 @@
+
 #include <time.h>
-//#include"dllhead1.h"
 #include"dhead1.h"
 #include <iostream>
 #include <cmath>
@@ -12,22 +12,9 @@
 
 using namespace std;
 
-
-
-
 static int window, returnmenu, returnsubmenu, returnsubmenucolor1, returnsubmenucolor2,value = 0;
-
 void *font = GLUT_BITMAP_TIMES_ROMAN_24;
-
 int window_ID;
-
-
-
-
-
-
-
-
 float red = 0.0, green = 0.0, blue = 0.0;
 int tmpx, tmpy; // store the first point when shape is line, rectangle or circle
 int brushSize = 4;
